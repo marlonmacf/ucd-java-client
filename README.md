@@ -8,4 +8,4 @@ Tecnologias utilizadas no projeto:
 - Projeto Maven
 - Spring Boot
 - Spring MVC
-- JavaServer Pages
+- Thymeleaf Template

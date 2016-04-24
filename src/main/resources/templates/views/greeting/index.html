@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--@thymesVar id="name" type="java.lang.String"-->
 <head>
-    <title>Unidos Contra a Dengue</title>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p>Hello World!</p>
+<p th:text="'Hello, ' + ${name} + '!'"></p>
 </body>
 </html>
