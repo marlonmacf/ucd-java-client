@@ -18,7 +18,7 @@ public class MainController {
     private RestTemplate restTemplate = new RestTemplate();
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value = "name", required = false, defaultValue = "client name") String name, Model model) {
+    public String greeting(@RequestParam(value = "name", defaultValue = "client") String name, Model model) {
 
         URI request = UriComponentsBuilder.fromUriString("http://localhost:8080")
                 .path("/greeting")
