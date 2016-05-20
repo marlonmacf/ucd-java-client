@@ -21,7 +21,7 @@ public class MainController {
     @RequestMapping("/")
     @ResponseBody
     String index() {
-        return "Unidos Contra a Dengue!";
+        return "Unidos Contra a Dengue!!!";
     }
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
