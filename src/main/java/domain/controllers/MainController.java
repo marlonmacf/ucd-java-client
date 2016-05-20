@@ -18,8 +18,9 @@ public class MainController {
     private RestTemplate restTemplate = new RestTemplate();
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value = "name", defaultValue = "") String name, Model model) {
+    public String greeting(@RequestParam(value = "name", defaultValue = "YO!") String name, Model model) {
 
+	/*
         URI request = UriComponentsBuilder.fromUriString("http://localhost:8080")
                 .path("/greeting")
                 .queryParam("name", name)
@@ -29,12 +30,9 @@ public class MainController {
         Map response = restTemplate.getForEntity(request, Map.class).getBody();
 
         model.addAttribute("name", response.get("name"));
+	*/
+        model.addAttribute("name", name);
 
         return "views/greeting/index";
-    }
-
-    @RequestMapping("/")
-    public String index() {
-        return "Hello world!";
     }
 }
