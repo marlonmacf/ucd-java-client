@@ -32,4 +32,9 @@ public class MainController {
 
         return "views/greeting/index";
     }
+
+    @RequestMapping("/")
+    public String index() {
+        return "Hello world!";
+    }
 }
