@@ -35,11 +35,7 @@ public class MainController {
 
         Map response = restTemplate.getForEntity(request, Map.class).getBody();
 
-        if(response.get("app") != null) {
-            model.addAttribute("app", response.get("app"));
-        } else {
-            model.addAttribute("app", app);
-        }
+        model.addAttribute("app", response.get("app"));
 
         return "views/greeting/index";
     }
