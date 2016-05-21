@@ -29,13 +29,13 @@ public class MainController {
 
         URI request = UriComponentsBuilder.fromUriString("https://ucd-server.herokuapp.com")
                 .path("/greeting")
-                .queryParam("app", app)
+                .queryParam("app", "client/" + app)
                 .build()
                 .toUri();
 
         Map response = restTemplate.getForEntity(request, Map.class).getBody();
 
-        model.addAttribute("app", "client/" + response.get("app"));
+        model.addAttribute("app", response.get("app"));
 
         return "views/greeting/index";
     }
