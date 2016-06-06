@@ -19,9 +19,8 @@ public class MainController {
     private RestTemplate restTemplate = new RestTemplate();
 
     @RequestMapping("/")
-    @ResponseBody
     String index() {
-        return "Unidos Contra a Dengue!!!";
+        return "cardio/index";
     }
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
@@ -41,6 +40,6 @@ public class MainController {
 
         model.addAttribute("name", name);
 
-        return "views/greeting/index";
+        return "main/index";
     }
 }

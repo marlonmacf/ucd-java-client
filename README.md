@@ -9,4 +9,5 @@ Tecnologias utilizadas no projeto:
 - Spring Boot
 - Spring MVC
 - Thymeleaf Template
+- Cardio Bootstrap Template
 - Heroku PaaS
