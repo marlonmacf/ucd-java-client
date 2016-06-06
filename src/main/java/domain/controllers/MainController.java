@@ -34,9 +34,9 @@ public class MainController {
                 .toUri();
 
         Map response = restTemplate.getForEntity(request, Map.class).getBody();
-        */
 
         model.addAttribute("app", response.get("app"));
+        */
 
         return "main/index";
     }
