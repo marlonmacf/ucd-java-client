@@ -24,21 +24,19 @@ public class MainController {
     }
 
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value = "name", defaultValue = "YO!") String name, Model model) {
+    public String greeting(@RequestParam(value = "app", defaultValue = "app") String app, Model model) {
 
-    	/*
-        URI request = UriComponentsBuilder.fromUriString("http://localhost:8080")
+        /*
+        URI request = UriComponentsBuilder.fromUriString("https://ucd-server.herokuapp.com")
                 .path("/greeting")
-                .queryParam("name", name)
+                .queryParam("app", "client/" + app)
                 .build()
                 .toUri();
 
         Map response = restTemplate.getForEntity(request, Map.class).getBody();
+        */
 
-        model.addAttribute("name", response.get("name"));
-	    */
-
-        model.addAttribute("name", name);
+        model.addAttribute("app", response.get("app"));
 
         return "main/index";
     }
