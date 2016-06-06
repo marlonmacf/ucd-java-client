@@ -16,28 +16,8 @@ import java.util.Map;
 @Controller
 public class MainController {
 
-    private RestTemplate restTemplate = new RestTemplate();
-
     @RequestMapping("/")
     String index() {
         return "cardio/index";
-    }
-
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value = "app", defaultValue = "app") String app, Model model) {
-
-        /*
-        URI request = UriComponentsBuilder.fromUriString("https://ucd-server.herokuapp.com")
-                .path("/greeting")
-                .queryParam("app", "client/" + app)
-                .build()
-                .toUri();
-
-        Map response = restTemplate.getForEntity(request, Map.class).getBody();
-
-        model.addAttribute("app", response.get("app"));
-        */
-
-        return "main/index";
     }
 }
