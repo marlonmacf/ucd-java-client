@@ -94,8 +94,8 @@ jQuery(function($) {
 	});
 
 	// Pricing Box Click Event
-	$('.pricing .box-main').click(function() {
-		$('.pricing .box-main').removeClass('active');
+	$('.pricing .box-greeting').click(function() {
+		$('.pricing .box-greeting').removeClass('active');
 		$('.pricing .box-second').removeClass('active');
 		$(this).addClass('active');
 		$(this).next($('.box-second')).addClass('active');

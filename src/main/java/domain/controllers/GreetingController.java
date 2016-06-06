@@ -27,6 +27,6 @@ public class GreetingController {
         model.addAttribute("app", response.get("app"));
         */
 
-        return "main/index";
+        return "greeting/index";
     }
 }
