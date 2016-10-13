@@ -1,3 +1,6 @@
+.settings
+.classpath
+.project
 .idea
 /target
 /ucd-java-client.iml

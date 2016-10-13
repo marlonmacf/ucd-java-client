@@ -2,11 +2,12 @@ package domain.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class CardioController {
 
-    @RequestMapping("/cardio")
+    @RequestMapping(value = "/cardio", method = RequestMethod.GET)
     String index() {
         return "cardio/index";
     }
