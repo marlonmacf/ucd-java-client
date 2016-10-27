@@ -9,6 +9,6 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     String index() {
-        return "cardio/index";
+        return "main/index";
     }
 }
