@@ -114,7 +114,7 @@ header {
 	width: 100%;
 	color: white;
 	background: rgba(28, 36, 65, 0.93);
-	background: url('../img/header.jpg');
+	background: url('../img/header.png');
 	background-size: cover;
 }
 
@@ -143,7 +143,7 @@ header .typed-cursor {
 	font-size: 60px;
 	display: inline-block;
 	margin: 0 10px;
-	color: #00a8ff;
+	color: #6db33f;
 	-webkit-animation-name: flash;
 	animation-name: flash;
 	-webkit-animation-duration: 1s;
@@ -154,7 +154,7 @@ header .typed-cursor {
 
 a {
 	text-decoration: none;
-	color: #00a8ff;
+	color: #6db33f;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -170,7 +170,7 @@ nav.navbar {
 }
 
 nav.navbar .navbar-nav li.active a:not(.btn) {
-	color: #00a8ff !important;
+	color: #6db33f !important;
 }
 
 nav.navbar-fixed-top {
@@ -209,22 +209,22 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 }
 
 .btn.btn-blue {
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .btn.btn-blue:hover {
-	background: #31b9ff;
+	background: #6db33f;
 }
 
 .btn.btn-blue-fill {
-	color: #00a8ff;
-	border-color: #00a8ff;
+	color: #6db33f;
+	border-color: #6db33f;
 	background: transparent;
 }
 
 .btn.btn-blue-fill:hover {
 	color: white;
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .btn.btn-white-fill {
@@ -234,7 +234,7 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 }
 
 .btn.btn-white-fill:hover {
-	color: #00a8ff;
+	color: #6db33f;
 	background: #fff;
 }
 
@@ -277,6 +277,11 @@ section {
 .section {
 	padding: 40px 0;
 	background: #fff;
+}
+
+.section-dark {
+	padding: 40px 0;
+	background: #aaaaaa;
 }
 
 .section-padded {
@@ -486,7 +491,7 @@ section {
 }
 
 .service:hover {
-	border-color: #00a8ff;
+	border-color: #6db33f;
 }
 
 .service:hover .icon-holder {
@@ -526,7 +531,7 @@ section {
 	height: 250px;
 	padding-top: 60px;
 	opacity: 0;
-	background: rgba(0, 168, 255, 0.9);
+	background: #6db33f;
 	-webkit-transition: opacity 0.45s ease;
 	transition: opacity 0.45s ease;
 }
@@ -548,7 +553,7 @@ section {
 /* Pricing */
 
 #pricing {
-	background: #00a8ff url('../img/pricing1.jpg') no-repeat center center;
+	background: #6db33f url('../img/pricing1.jpg') no-repeat center center;
 	-webkit-background-size: cover;
 	background-size: cover;
 	-webkit-transition: background-image 0.6s linear 0.3s;
@@ -617,7 +622,7 @@ section {
 }
 
 .pricings .pricing .box-main.active {
-	background: #00a8ff;
+	background: #6db33f;
 	-webkit-transform: translateX(-99%);
 	-ms-transform: translateX(-99%);
 	transform: translateX(-99%);
@@ -634,12 +639,12 @@ section {
 
 .pricings .pricing .box-second.active {
 	opacity: 1;
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .pricings .pricing.active .box-main,
 .pricings .pricing .box-second {
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .pricings .pricing .box-main a.btn {
@@ -719,7 +724,7 @@ footer .social-footer li a {
 }
 
 footer .social-footer li:hover a {
-	color: #00a8ff;
+	color: #6db33f;
 }
 /* Form Control */
 
@@ -838,12 +843,12 @@ footer .social-footer li:hover a {
 .popup-form .dropdown .dropdown-menu li a {
 	width: 100%;
 	padding: 15px 30px;
-	color: #00a8ff;
+	color: #6db33f;
 }
 
 .popup-form .dropdown .dropdown-menu li:hover a {
 	color: #fff;
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 /* Checkbox */
@@ -914,7 +919,7 @@ footer .social-footer li:hover a {
 .btn.btn-submit {
 	width: 100%;
 	margin-top: 30px;
-	color: #00a8ff;
+	color: #6db33f;
 	border: 2px solid #fff;
 	background: #fff;
 }
@@ -924,7 +929,7 @@ footer .social-footer li:hover a {
 }
 
 .btn.btn-submit:hover {
-	color: #00a8ff;
+	color: #6db33f;
 	background: #fff;
 }
 
@@ -978,7 +983,7 @@ footer .social-footer li:hover a {
 	width: 100%;
 	padding: 15px 0;
 	color: #fff;
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .row.title {
@@ -1015,11 +1020,11 @@ footer .social-footer li:hover a {
 }
 
 .blue {
-	color: #00a8ff;
+	color: #6db33f;
 }
 
 .blue-bg {
-	background: #00a8ff;
+	background: #6db33f;
 }
 
 .muted {
@@ -1075,10 +1080,10 @@ footer .social-footer li:hover a {
 		width: 100%;
 		padding: 50px 50px 0;
 		text-align: left;
-		background: #00a8ff;
+		background: #6db33f;
 	}
 	.pricings .pricing .box-main.active {
-		background: #00a8ff;
+		background: #6db33f;
 		-webkit-transform: translateX(0%);
 		-ms-transform: translateX(0%);
 		transform: translateX(0%);
@@ -1110,7 +1115,6 @@ footer .social-footer li:hover a {
 	}
 }
 
-
-
-
-
+.logged-user-name {
+	margin: 11px 0 0 0 !important;
+}

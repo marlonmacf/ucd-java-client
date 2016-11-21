@@ -1,10 +1,309 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="loggedUser" type="domain.entities.User"*/-->
 <head>
     <title>Unidos Contra a Dengue</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!-- Normalize -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/normalize.css" th:href="@{css/normalize.css}"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css" th:href="@{css/bootstrap.css}"/>
+
+    <!-- Owl -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/owl.css" th:href="@{css/owl.css}"/>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/animate.css" th:href="@{css/animate.css}"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="../../static/fonts/font-awesome-4.1.0/css/font-awesome.min.css"
+          th:href="@{fonts/font-awesome-4.1.0/css/font-awesome.min.css}"/>
+
+    <!-- Elegant Icons -->
+    <link rel="stylesheet" type="text/css" href="../../static/fonts/eleganticons/et-icons.css"
+          th:href="@{fonts/eleganticons/et-icons.css}"/>
+
+    <!-- Cardio style -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/cardio.css" th:href="@{css/cardio.css}"/>
+
 </head>
+
 <body>
-<h1>Yoooooooo!!!</h1>
+
+<div class="preloader">
+    <!--<img src="../../static/img/loader.gif" alt="Preloader image" th:src="@{img/logo.png}"/>-->
+</div>
+
+<nav class="navbar">
+
+    <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <!--<img src="../../static/img/logo.png" alt="" th:src="@{img/logo.png}"/>-->
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right main-nav">
+                <li><a href="#info">Informativo</a></li>
+                <li><a href="#place">Denúncias</a></li>
+                <li><a href="#ranking">Ranking</a></li>
+                <li th:switch="${loggedUser != null}">
+                    <p th:case="true" href="#" th:text="${loggedUser.getName()}" class="blue logged-user-name" id="userName"></p>
+                    <a th:case="false" href="#" data-toggle="modal" data-target="#modalSingUp" id="singUp">Cadastrar</a>
+                </li>
+                <li th:switch="${loggedUser != null}">
+                    <a th:case="true" href="/logout" id="singOut">Sair</a>
+                    <a th:case="false" href="#" data-toggle="modal" data-target="#modalSingIn" class="btn btn-blue" id="singIn">Entrar</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+
+<header id="info">
+    <div class="container">
+        <div class="table">
+            <div class="header-text">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="light white">Unidos Contra a Dengue</h1>
+                        <h3 class="white typed">Participe você também no combate contra a dengue.</h3>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+
+    <div class="cut cut-top"></div>
+
+    <div class="container">
+
+        <div class="row intro-tables">
+
+            <div class="col-md-4">
+                <div class="intro-table intro-table-first">
+                    <h5 class="white heading">Informativo</h5>
+                    <div class="owl-carousel owl-schedule bottom">
+                        <div class="item">
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Remova folhas, galhos e tudo que possa impedir a água de
+                                        correr pelas calhas.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Mantenha a caixa d'agua sempre fechada com tampa
+                                        adequada.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Não deixe a água da chuva acumulada sobre a laje.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Lave semanalmente por dentro os tanques utilizados
+                                        para armazenar água.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Matenha bem tampados tonéis e barris d'agua.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Encha de areia até a borda os pratinhos dos vasos de
+                                        planta.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Entregue seus pneus velhos ao serviço de limpeza urbana
+                                        ou guarde-os sem água.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Guarde garrafas sempre de cabeça pra baixo.</h5>
+                                </div>
+                            </div>
+                            <div class="schedule-row row">
+                                <div class="col-xs-12">
+                                    <h5 class="regular white">Não jogue lixo dos terrenos baldios.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="intro-table intro-table-hover">
+                    <h5 class="white heading hide-hover">Inspetor da Zoonoses?</h5>
+                    <div class="bottom">
+                        <h4 class="white heading small-heading no-margin regular">Registre-se</h4>
+                        <a href="#" class="btn btn-white-fill expand">Registrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="intro-table intro-table-third">
+                    <h5 class="white heading">Tarefas</h5>
+                    <div class="owl-testimonials bottom">
+                        <div class="item">
+                            <h4 class="white heading content">Preencha todos os vasos de plantas com areia!</h4>
+                            <h5 class="white heading light author">Marlon Andrel</h5>
+                        </div>
+                        <div class="item">
+                            <h4 class="white heading content">Vire todas as embalagens que possam armazenar água com a
+                                boca para baixo!</h4>
+                            <h5 class="white heading light author">Iago Oliveira</h5>
+                        </div>
+                        <div class="item">
+                            <h4 class="white heading content">Verifique pneus, entulhos e lixos para possíveis
+                                focos!</h4>
+                            <h5 class="white heading light author">Bruna Danielli</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="place" class="section section-padded">
+
+    <div class="container">
+
+        <div class="row text-center title">
+            <h2>Denúncias</h2>
+            <h4 class="light muted">Acompanhe os principais focos de dengue em sua região!</h4>
+        </div>
+
+        <div class="row services">
+            <div class="col-md-12">
+                <div class="service">
+                    <br/><br/><br/>
+                    <h4 class="heading">Google Maps</h4>
+                    <p class="description">Adicionar aqui um mapa representando todos dos focos de dengue a partir da
+                        localização do usuário utilizando o Google Maps JavaScript API...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cut cut-bottom"></div>
+
+</section>
+
+<section id="ranking" class="section gray-bg">
+
+    <div class="container">
+
+        <div class="row text-center title">
+            <h2>Ranking</h2>
+            <h4 class="light muted">Qual sua posição entre os combatentes?</h4>
+        </div>
+
+        <div class="row services">
+            <div class="col-md-12">
+                <div class="service">
+                    <br/><br/><br/>
+                    <h4 class="heading">DataTables</h4>
+                    <p class="description">Adicionar aqui uma tabela contendo todos os usuário ordenados pelo seu
+                        score utilizando o DataTables plug-in para o jQuery...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cut cut-bottom"></div>
+
+</section>
+
+<section id="about" class="section-dark">
+
+    <div class="container">
+        <div class="row title text-center">
+            <br/><br/><br/>
+            <h5 class="light white">Logo do IFTM aqui.</h5>
+        </div>
+    </div>
+
+</section>
+
+<div class="modal fade" id="modalSingIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <h3 class="white">Acessar</h3>
+            <form action="/login" method="POST" class="popup-form">
+                <input type="text" name="email" class="form-control form-white" placeholder="Email" id="userEmail"/>
+                <input type="password" name="password" class="form-control form-white" placeholder="Senha" id="userPassword"/>
+                <button type="submit" class="btn btn-submit" id="singInButton">Acessar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalSingUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <h3 class="white">Cadastrar</h3>
+            <form action="/user" method="POST" class="popup-form">
+                <input type="text" class="form-control form-white" placeholder="Nome" name="name" id="storeUserName"/>
+                <input type="text" class="form-control form-white" placeholder="Email" name="email" id="storeUserEmail"/>
+                <input type="password" class="form-control form-white" placeholder="Senha" name="password" id="storeUserPassword"/>
+                <div class="checkbox-holder text-left">
+                    <div class="checkbox">
+                        <input type="checkbox" value="true" id="squaredOne" name="inspector"/>
+                        <label for="squaredOne"><span>Inspetor</span></label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-submit" id="singUpButton">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="../../static/js/jquery-1.11.1.min.js" th:src="@{js/jquery-1.11.1.min.js}"></script>
+<script src="../../static/js/owl.carousel.min.js" th:src="@{js/owl.carousel.min.js}"></script>
+<script src="../../static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
+<script src="../../static/js/wow.min.js" th:src="@{js/wow.min.js}"></script>
+<script src="../../static/js/typewriter.js" th:src="@{js/typewriter.js}"></script>
+<script src="../../static/js/jquery.onepagenav.js" th:src="@{js/jquery.onepagenav.js}"></script>
+<script src="../../static/js/main.js" th:src="@{js/main.js}"></script>
 </body>
 </html>
