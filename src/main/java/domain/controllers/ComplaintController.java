@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
+
 @Controller
 public class ComplaintController {
 
@@ -22,13 +24,13 @@ public class ComplaintController {
     @RequestMapping(value = "/complaint", method = RequestMethod.GET)
     public String index(Model model) {
 
-        Complaint complaint = apiClient.get(UriComponentsBuilder.fromUriString(ApiClient.URL_SERVER)
+        List<Complaint> complaints = apiClient.get(UriComponentsBuilder.fromUriString(ApiClient.URL_SERVER)
                 .path("/complaint")
                 .build()
                 .toUri())
-                .one(Complaint.class);
+                .all(Complaint.class);
 
-        model.addAttribute("complaint", complaint);
+        model.addAttribute("complaints", complaints);
         return "main/index";
     }
 }

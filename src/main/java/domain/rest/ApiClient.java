@@ -18,7 +18,7 @@ import java.util.Map;
 @Component
 public class ApiClient {
 
-    private RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate rest = new RestTemplate();
     private Gson gson = new Gson();
     private String body;
 
@@ -28,22 +28,22 @@ public class ApiClient {
 
     @Autowired
     public ApiClient(Environment env) {
-        this.restTemplate = new RestTemplate();
+        this.rest = new RestTemplate();
         this.gson = new Gson();
         this.body = null;
 
-        URL_CLIENT = env.getProperty("client.url");
-        URL_SERVER = env.getProperty("server.url");
-        URL_IMGUR = env.getProperty("server.img");
+        URL_CLIENT = env.getProperty("url.client");
+        URL_SERVER = env.getProperty("url.server");
+        URL_IMGUR = env.getProperty("url.imgur");
     }
 
     public ApiClient get(URI request) {
-        body = restTemplate.getForEntity(request, String.class).getBody();
+        body = rest.getForEntity(request, String.class).getBody();
         return this;
     }
 
     public ApiClient post(URI request) {
-        body = restTemplate.postForEntity(request.toString(), request, String.class).getBody();
+        body = rest.postForEntity(request.toString(), request, String.class).getBody();
         return this;
     }
 
